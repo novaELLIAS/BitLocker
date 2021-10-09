@@ -1,0 +1,121 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RGBLED1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBLED1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBLED2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBLED2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pwled[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pwled[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pwled[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pwled[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledSeg2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pwswt[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pwswt[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pwswt[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pwswt[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "keyset[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keychk[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
