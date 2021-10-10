@@ -1,6 +1,6 @@
 /* Ellias Kiri Stuart */
 
-module debounce (
+module debouncer (
 	input        clk,
 	input  [2:0] keyin,
 	output [2:0] keyout);
@@ -76,42 +76,39 @@ module BitLocker (
 	output 	  [3:0] pwled,
 	output 	  [8:0] ledSeg1,
 	output 	  [8:0] ledSeg2,
-	output reg 	  	  ledset,
+	output 	 	  	  ledset,
 	output reg       ledtest);
 	
 	wire   	  [2:0] keyMap;
 	reg        [3:0] password;
-	reg        [0:0] setFlag;
+	reg        [0:0] setsta;
 	reg        [4:0] chances;
 	reg        [0:0] opensta;
 	
 	initial begin
-		ledset   <= 1'b1;
 		ledtest  <= 1'b1;
-		setFlag  <= 1'b0;
+		setsta   <= 1'b0;
 		chances  <= 4'b0101;
 		password <= 4'b0000;
 		opensta  <= 1'b0;
 	end
 	
 	assign pwled   = ~pwswt;
+	assign ledset  = setsta == 1'b0;
 	assign RGBLED2 = (chances > 4'b0)? 3'b101:3'b011;
 	assign RGBLED1 = opensta? 3'b101:3'b011;
-	
-//	always@(posedge clk) begin
-//		if (keyMap[2]) ledtest <= ~ledtest;
-//	end
 
 	// keychk, keyrst, keyset
 	
-	always@(posedge keyMap[0] or posedge keyMap[2]) begin
+	always@(posedge keyMap[1] or posedge keyMap[2]) begin
 	
-		if (keyMap[0]) begin
+		if (keyMap[1])begin
 			opensta <= 1'b0;
 			chances <= 4'b0101;
 		end
 		
-		else if (chances > 4'b0000 && keyMap[2]) begin
+		else if (keyMap[2])
+		if (chances > 4'b0000 && setsta == 1'b0) begin
 			if (password ^ pwswt) begin
 				opensta <= 1'b0;
 				chances <= chances - 1'b1;
@@ -122,13 +119,24 @@ module BitLocker (
 		end
 	end
 	
+	// keychk, keyrst, keyset
+	
+	always@(posedge keyMap[0]) begin
+		if (opensta == 1'b1) begin
+			if (setsta == 1'b0) setsta <= 1'b1;
+			else begin
+				setsta <= 1'b0; password <= pwswt;
+			end
+		end
+	end
+	
 	LED_SEG_OUTPUT o1 (
 		.num1 (chances/10),
 		.num2 (chances%10),
 		.ledSeg1 (ledSeg1),
 		.ledSeg2 (ledSeg2));
 		
-	debounce k1 (
+	debouncer k1 (
 		.clk (clk),
 		.keyin ({keychk, keyrst, keyset}),
 		.keyout (keyMap));

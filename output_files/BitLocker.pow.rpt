@@ -1,5 +1,5 @@
 Power Analyzer report for BitLocker
-Sat Oct 09 16:15:19 2021
+Sun Oct 10 22:34:39 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -53,19 +53,19 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.08        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.9%      ;
+;     Processors 2-8         ;   1.1%      ;
 +----------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------+
 ; Power Analyzer Summary                                                                    ;
 +----------------------------------------+--------------------------------------------------+
-; Power Analyzer Status                  ; Successful - Sat Oct 09 16:15:19 2021            ;
+; Power Analyzer Status                  ; Successful - Sun Oct 10 22:34:39 2021            ;
 ; Quartus Prime Version                  ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition      ;
 ; Revision Name                          ; BitLocker                                        ;
 ; Top-level Entity Name                  ; BitLocker                                        ;
@@ -104,23 +104,24 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+---------+---------------+
 
 
-+-------------------------------------------------------------+
-; Indeterminate Toggle Rates                                  ;
-+-------------------------------+-----------------------------+
-; Node                          ; Reason                      ;
-+-------------------------------+-----------------------------+
-; keyrst[0]                     ; No valid clock domain found ;
-; pwswt[0]                      ; No valid clock domain found ;
-; pwswt[1]                      ; No valid clock domain found ;
-; pwswt[2]                      ; No valid clock domain found ;
-; pwswt[3]                      ; No valid clock domain found ;
-; clk                           ; No valid clock domain found ;
-; keyset[0]                     ; No valid clock domain found ;
-; keychk[0]                     ; No valid clock domain found ;
-; debounce:k1|cntFlag~clkctrl   ; No valid clock domain found ;
-; clk~inputclkctrl              ; No valid clock domain found ;
-; debounce:k1|keyout[2]~clkctrl ; No valid clock domain found ;
-+-------------------------------+-----------------------------+
++--------------------------------------------------------------+
+; Indeterminate Toggle Rates                                   ;
++--------------------------------+-----------------------------+
+; Node                           ; Reason                      ;
++--------------------------------+-----------------------------+
+; pwswt[0]                       ; No valid clock domain found ;
+; pwswt[1]                       ; No valid clock domain found ;
+; pwswt[2]                       ; No valid clock domain found ;
+; pwswt[3]                       ; No valid clock domain found ;
+; clk                            ; No valid clock domain found ;
+; keyrst[0]                      ; No valid clock domain found ;
+; keychk[0]                      ; No valid clock domain found ;
+; keyset[0]                      ; No valid clock domain found ;
+; debouncer:k1|keyout[0]~clkctrl ; No valid clock domain found ;
+; clk~inputclkctrl               ; No valid clock domain found ;
+; debouncer:k1|keyout[2]~clkctrl ; No valid clock domain found ;
+; debouncer:k1|cntFlag~clkctrl   ; No valid clock domain found ;
++--------------------------------+-----------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -183,7 +184,7 @@ https://fpgasoftware.intel.com/eula.
 ;             |sign_div_unsign_8kh:divider ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |BitLocker|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider                       ;
 ;                 |alt_u_div_qee:divider   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |BitLocker|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ;
 ;     |hard_block:auto_generated_inst      ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |BitLocker|hard_block:auto_generated_inst                                                                  ;
-;     |debounce:k1                         ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |BitLocker|debounce:k1                                                                                     ;
+;     |debouncer:k1                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |BitLocker|debouncer:k1                                                                                    ;
 ;     |LED_SEG_OUTPUT:o1                   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |BitLocker|LED_SEG_OUTPUT:o1                                                                               ;
 +------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+------------------------------------------------------------------------------------------------------------+
 (1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
@@ -250,19 +251,19 @@ https://fpgasoftware.intel.com/eula.
 ;                                                                                        ;             ;            ;             ;               ;
 ; Node, entity or clock assignment                                                       ;             ;            ;             ;               ;
 ;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 3 (1.2%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 3 (1.8%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 4 (1.5%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 4 (2.3%)      ;
 ;                                                                                        ;             ;            ;             ;               ;
 ; Vectorless estimation                                                                  ;             ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 226 (93.8%) ; 31 (67.4%) ; 31 (100.0%) ; 164 (100.0%)  ;
-;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 40 (16.6%)  ; 14 (30.4%) ; 0 (0.0%)    ; 26 (15.9%)    ;
-;     -- Number of signals with Static Probability from Vectorless estimation            ; 223 (92.5%) ; 31 (67.4%) ; 31 (100.0%) ; 161 (98.2%)   ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 245 (94.2%) ; 31 (67.4%) ; 38 (100.0%) ; 176 (100.0%)  ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 42 (16.2%)  ; 13 (28.3%) ; 0 (0.0%)    ; 29 (16.5%)    ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 241 (92.7%) ; 31 (67.4%) ; 38 (100.0%) ; 172 (97.7%)   ;
 ;                                                                                        ;             ;            ;             ;               ;
 ; Default assignment                                                                     ;             ;            ;             ;               ;
 ;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Default assignment               ; 15 (6.2%)   ; 15 (32.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 15 (5.8%)   ; 15 (32.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
 ;                                                                                        ;             ;            ;             ;               ;
 ; Assumed 0                                                                              ;             ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate assumed 0                                    ; 15 (6.2%)   ; 15 (32.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 15 (5.8%)   ; 15 (32.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
 +----------------------------------------------------------------------------------------+-------------+------------+-------------+---------------+
 
 
@@ -280,18 +281,20 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Power Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Oct 09 16:15:18 2021
+    Info: Processing started: Sun Oct 10 22:34:37 2021
 Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off BitLocker -c BitLocker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (21077): Low junction temperature is -40 degrees C
 Info (21077): High junction temperature is 100 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'BitLocker.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Warning (332060): Node: debounce:k1|keyNow[2] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register chances[4] is being clocked by debounce:k1|keyNow[2]
-Warning (332060): Node: debounce:k1|cntFlag was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register debounce:k1|keyNow[0] is being clocked by debounce:k1|cntFlag
+Warning (332060): Node: debouncer:k1|keyNow[2] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register chances[4] is being clocked by debouncer:k1|keyNow[2]
+Warning (332060): Node: debouncer:k1|keyNow[0] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register password[1] is being clocked by debouncer:k1|keyNow[0]
+Warning (332060): Node: debouncer:k1|cntFlag was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register debouncer:k1|keyNow[0] is being clocked by debouncer:k1|cntFlag
 Warning (332060): Node: clk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register debounce:k1|cntFlag is being clocked by clk
+    Info (13166): Register debouncer:k1|cntFlag is being clocked by clk
 Warning (332068): No clocks defined in design.
 Info (223000): Starting Vectorless Power Activity Estimation
 Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
@@ -302,10 +305,10 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (215049): Average toggle rate for this design is 0.000 millions of transitions / sec
 Info (215031): Total thermal power estimate for the design is 114.48 mW
-Info: Quartus Prime Power Analyzer was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Sat Oct 09 16:15:19 2021
-    Info: Elapsed time: 00:00:01
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Sun Oct 10 22:34:39 2021
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

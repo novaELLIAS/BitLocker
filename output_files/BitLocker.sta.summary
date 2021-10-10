@@ -3,14 +3,22 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 100C Model Setup 'clk'
-Slack : -3.263
-TNS   : -62.462
+Slack : -3.323
+TNS   : -64.379
 
-Type  : Slow 1200mV 100C Model Setup 'debounce:k1|keyNow[2]'
-Slack : -1.187
-TNS   : -6.646
+Type  : Slow 1200mV 100C Model Setup 'debouncer:k1|keyNow[2]'
+Slack : -1.594
+TNS   : -9.327
 
-Type  : Slow 1200mV 100C Model Hold 'debounce:k1|keyNow[2]'
+Type  : Slow 1200mV 100C Model Setup 'debouncer:k1|keyNow[0]'
+Slack : -1.132
+TNS   : -5.067
+
+Type  : Slow 1200mV 100C Model Hold 'debouncer:k1|keyNow[0]'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'debouncer:k1|keyNow[2]'
 Slack : 0.352
 TNS   : 0.000
 
@@ -18,35 +26,47 @@ Type  : Slow 1200mV 100C Model Hold 'clk'
 Slack : 0.422
 TNS   : 0.000
 
-Type  : Slow 1200mV 100C Model Recovery 'debounce:k1|keyNow[2]'
-Slack : -1.193
-TNS   : -7.158
+Type  : Slow 1200mV 100C Model Recovery 'debouncer:k1|keyNow[2]'
+Slack : -1.055
+TNS   : -6.330
 
-Type  : Slow 1200mV 100C Model Removal 'debounce:k1|keyNow[2]'
-Slack : 1.507
+Type  : Slow 1200mV 100C Model Removal 'debouncer:k1|keyNow[2]'
+Slack : 1.399
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -35.269
+TNS   : -36.672
 
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'debounce:k1|keyNow[2]'
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'debouncer:k1|keyNow[2]'
 Slack : -1.403
 TNS   : -8.418
 
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'debounce:k1|cntFlag'
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'debouncer:k1|keyNow[0]'
 Slack : -1.403
-TNS   : -2.806
+TNS   : -7.015
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'debouncer:k1|cntFlag'
+Slack : -1.403
+TNS   : -4.209
 
 Type  : Slow 1200mV -40C Model Setup 'clk'
-Slack : -2.791
-TNS   : -53.210
+Slack : -2.837
+TNS   : -54.642
 
-Type  : Slow 1200mV -40C Model Setup 'debounce:k1|keyNow[2]'
-Slack : -0.958
-TNS   : -5.297
+Type  : Slow 1200mV -40C Model Setup 'debouncer:k1|keyNow[2]'
+Slack : -1.311
+TNS   : -7.638
 
-Type  : Slow 1200mV -40C Model Hold 'debounce:k1|keyNow[2]'
+Type  : Slow 1200mV -40C Model Setup 'debouncer:k1|keyNow[0]'
+Slack : -0.879
+TNS   : -3.856
+
+Type  : Slow 1200mV -40C Model Hold 'debouncer:k1|keyNow[0]'
+Slack : 0.302
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'debouncer:k1|keyNow[2]'
 Slack : 0.302
 TNS   : 0.000
 
@@ -54,35 +74,47 @@ Type  : Slow 1200mV -40C Model Hold 'clk'
 Slack : 0.380
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Recovery 'debounce:k1|keyNow[2]'
-Slack : -1.014
-TNS   : -6.084
+Type  : Slow 1200mV -40C Model Recovery 'debouncer:k1|keyNow[2]'
+Slack : -0.898
+TNS   : -5.388
 
-Type  : Slow 1200mV -40C Model Removal 'debounce:k1|keyNow[2]'
-Slack : 1.361
+Type  : Slow 1200mV -40C Model Removal 'debouncer:k1|keyNow[2]'
+Slack : 1.274
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -35.269
+TNS   : -36.672
 
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'debounce:k1|keyNow[2]'
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'debouncer:k1|keyNow[2]'
 Slack : -1.403
 TNS   : -8.418
 
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'debounce:k1|cntFlag'
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'debouncer:k1|keyNow[0]'
 Slack : -1.403
-TNS   : -2.806
+TNS   : -7.015
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'debouncer:k1|cntFlag'
+Slack : -1.403
+TNS   : -4.209
 
 Type  : Fast 1200mV -40C Model Setup 'clk'
-Slack : -0.693
-TNS   : -11.989
+Slack : -0.717
+TNS   : -12.684
 
-Type  : Fast 1200mV -40C Model Setup 'debounce:k1|keyNow[2]'
-Slack : 0.081
+Type  : Fast 1200mV -40C Model Setup 'debouncer:k1|keyNow[2]'
+Slack : -0.056
+TNS   : -0.280
+
+Type  : Fast 1200mV -40C Model Setup 'debouncer:k1|keyNow[0]'
+Slack : 0.076
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Hold 'debounce:k1|keyNow[2]'
+Type  : Fast 1200mV -40C Model Hold 'debouncer:k1|keyNow[0]'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'debouncer:k1|keyNow[2]'
 Slack : 0.147
 TNS   : 0.000
 
@@ -90,24 +122,28 @@ Type  : Fast 1200mV -40C Model Hold 'clk'
 Slack : 0.161
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Recovery 'debounce:k1|keyNow[2]'
-Slack : -0.261
-TNS   : -1.566
+Type  : Fast 1200mV -40C Model Recovery 'debouncer:k1|keyNow[2]'
+Slack : -0.199
+TNS   : -1.194
 
-Type  : Fast 1200mV -40C Model Removal 'debounce:k1|keyNow[2]'
-Slack : 0.846
+Type  : Fast 1200mV -40C Model Removal 'debouncer:k1|keyNow[2]'
+Slack : 0.775
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -30.068
+TNS   : -31.165
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'debounce:k1|keyNow[2]'
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'debouncer:k1|keyNow[2]'
 Slack : -1.000
 TNS   : -6.000
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'debounce:k1|cntFlag'
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'debouncer:k1|keyNow[0]'
 Slack : -1.000
-TNS   : -2.000
+TNS   : -5.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'debouncer:k1|cntFlag'
+Slack : -1.000
+TNS   : -3.000
 
 ------------------------------------------------------------

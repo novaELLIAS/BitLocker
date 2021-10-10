@@ -3,44 +3,48 @@ clk => clk.IN1
 keychk[0] => keychk[0].IN1
 keyrst[0] => keyrst[0].IN1
 keyset[0] => keyset[0].IN1
-pwswt[0] => WideOr0.IN0
+pwswt[0] => always0.IN1
+pwswt[0] => password.DATAA
 pwswt[0] => pwled[0].DATAIN
-pwswt[1] => WideOr0.IN1
+pwswt[1] => always0.IN1
+pwswt[1] => password.DATAA
 pwswt[1] => pwled[1].DATAIN
-pwswt[2] => WideOr0.IN2
+pwswt[2] => always0.IN1
+pwswt[2] => password.DATAA
 pwswt[2] => pwled[2].DATAIN
-pwswt[3] => WideOr0.IN3
+pwswt[3] => always0.IN1
+pwswt[3] => password.DATAA
 pwswt[3] => pwled[3].DATAIN
-RGBLED1[0] <= <VCC>
-RGBLED1[1] <= opensta[0].DB_MAX_OUTPUT_PORT_TYPE
-RGBLED1[2] <= opensta[0].DB_MAX_OUTPUT_PORT_TYPE
-RGBLED2[0] <= <VCC>
-RGBLED2[1] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-RGBLED2[2] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-pwled[0] <= pwswt[0].DB_MAX_OUTPUT_PORT_TYPE
-pwled[1] <= pwswt[1].DB_MAX_OUTPUT_PORT_TYPE
-pwled[2] <= pwswt[2].DB_MAX_OUTPUT_PORT_TYPE
-pwled[3] <= pwswt[3].DB_MAX_OUTPUT_PORT_TYPE
-ledSeg1[0] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[1] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[2] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[3] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[4] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[5] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[6] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[7] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg1[8] <= LED_SEG_OUTPUT:o1.ledSeg1
-ledSeg2[0] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[1] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[2] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[3] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[4] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[5] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[6] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[7] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledSeg2[8] <= LED_SEG_OUTPUT:o1.ledSeg2
-ledset <= <VCC>
-ledtest <= <VCC>
+RGBLED1[0] << <VCC>
+RGBLED1[1] << opensta[0].DB_MAX_OUTPUT_PORT_TYPE
+RGBLED1[2] << opensta[0].DB_MAX_OUTPUT_PORT_TYPE
+RGBLED2[0] << <VCC>
+RGBLED2[1] << LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+RGBLED2[2] << LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+pwled[0] << pwswt[0].DB_MAX_OUTPUT_PORT_TYPE
+pwled[1] << pwswt[1].DB_MAX_OUTPUT_PORT_TYPE
+pwled[2] << pwswt[2].DB_MAX_OUTPUT_PORT_TYPE
+pwled[3] << pwswt[3].DB_MAX_OUTPUT_PORT_TYPE
+ledSeg1[0] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[1] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[2] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[3] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[4] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[5] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[6] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[7] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg1[8] << LED_SEG_OUTPUT:o1.ledSeg1
+ledSeg2[0] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[1] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[2] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[3] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[4] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[5] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[6] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[7] << LED_SEG_OUTPUT:o1.ledSeg2
+ledSeg2[8] << LED_SEG_OUTPUT:o1.ledSeg2
+ledset << ledset.DB_MAX_OUTPUT_PORT_TYPE
+ledtest << <VCC>
 
 
 |BitLocker|LED_SEG_OUTPUT:o1
@@ -72,7 +76,7 @@ ledSeg2[7] <= seg.PORTBDATAOUT7
 ledSeg2[8] <= seg.PORTBDATAOUT8
 
 
-|BitLocker|debounce:k1
+|BitLocker|debouncer:k1
 clk => keyPre[0].CLK
 clk => keyPre[1].CLK
 clk => keyPre[2].CLK

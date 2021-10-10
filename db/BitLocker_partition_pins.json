@@ -88,6 +88,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ledset",
+					"strict" : false
+				},
+				{
 					"name" : "pwswt[0]",
 					"strict" : false
 				},
@@ -108,11 +112,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "keyset[0]",
+					"name" : "keyrst[0]",
 					"strict" : false
 				},
 				{
 					"name" : "keychk[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keyset[0]",
 					"strict" : false
 				}
 			]

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BitLocker
-Sat Oct 09 16:15:10 2021
+Sun Oct 10 22:34:30 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,12 +13,12 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 13. Port Connectivity Checks: "debounce:k1"
+  8. State Machine - |BitLocker|setsta
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
  14. Port Connectivity Checks: "LED_SEG_OUTPUT:o1"
  15. Post-Synthesis Netlist Statistics for Top Partition
  16. Elapsed Time Per Partition
@@ -49,15 +49,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Oct 09 16:15:10 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct 10 22:34:30 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; BitLocker                                   ;
 ; Top-level Entity Name              ; BitLocker                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 93                                          ;
-;     Total combinational functions  ; 89                                          ;
-;     Dedicated logic registers      ; 31                                          ;
-; Total registers                    ; 31                                          ;
+; Total logic elements               ; 106                                         ;
+;     Total combinational functions  ; 96                                          ;
+;     Dedicated logic registers      ; 38                                          ;
+; Total registers                    ; 38                                          ;
 ; Total pins                         ; 38                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -195,20 +195,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 93        ;
+; Estimated Total logic elements              ; 106       ;
 ;                                             ;           ;
-; Total combinational functions               ; 89        ;
+; Total combinational functions               ; 96        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 18        ;
-;     -- 3 input functions                    ; 12        ;
-;     -- <=2 input functions                  ; 59        ;
+;     -- 4 input functions                    ; 20        ;
+;     -- 3 input functions                    ; 13        ;
+;     -- <=2 input functions                  ; 63        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 52        ;
+;     -- normal mode                          ; 59        ;
 ;     -- arithmetic mode                      ; 37        ;
 ;                                             ;           ;
-; Total registers                             ; 31        ;
-;     -- Dedicated logic registers            ; 31        ;
+; Total registers                             ; 38        ;
+;     -- Dedicated logic registers            ; 38        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 38        ;
@@ -216,9 +216,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 23        ;
-; Total fan-out                               ; 375       ;
-; Average fan-out                             ; 1.91      ;
+; Maximum fan-out                             ; 24        ;
+; Total fan-out                               ; 413       ;
+; Average fan-out                             ; 1.97      ;
 +---------------------------------------------+-----------+
 
 
@@ -227,9 +227,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                        ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |BitLocker                             ; 89 (11)             ; 31 (6)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 38   ; 0            ; 0          ; |BitLocker                                                                                                 ; BitLocker           ; work         ;
+; |BitLocker                             ; 96 (17)             ; 38 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 38   ; 0            ; 0          ; |BitLocker                                                                                                 ; BitLocker           ; work         ;
 ;    |LED_SEG_OUTPUT:o1|                 ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BitLocker|LED_SEG_OUTPUT:o1                                                                               ; LED_SEG_OUTPUT      ; work         ;
-;    |debounce:k1|                       ; 29 (29)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BitLocker|debounce:k1                                                                                     ; debounce            ; work         ;
+;    |debouncer:k1|                      ; 30 (30)             ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BitLocker|debouncer:k1                                                                                    ; debouncer           ; work         ;
 ;    |lpm_divide:Div0|                   ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BitLocker|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;       |lpm_divide_6sl:auto_generated|  ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BitLocker|lpm_divide:Div0|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
 ;          |sign_div_unsign_8kh:divider| ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BitLocker|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
@@ -240,6 +240,17 @@ https://fpgasoftware.intel.com/eula.
 ;             |alt_u_div_qee:divider|    ; 22 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BitLocker|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------+
+; State Machine - |BitLocker|setsta ;
++----------+------------------------+
+; Name     ; setsta.1               ;
++----------+------------------------+
+; setsta.0 ; 0                      ;
+; setsta.1 ; 1                      ;
++----------+------------------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -346,12 +357,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
+; Total registers                              ; 38    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 6     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 5     ;
+; Number of registers using Clock Enable       ; 9     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -361,8 +372,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; chances[0]                             ; 5       ;
-; chances[2]                             ; 10      ;
+; chances[0]                             ; 4       ;
+; chances[2]                             ; 9       ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
@@ -413,15 +424,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debounce:k1"                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; keyout[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "LED_SEG_OUTPUT:o1"                                                                                                                                                                ;
 +------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -438,25 +440,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 38                          ;
-; cycloneiii_ff         ; 31                          ;
+; cycloneiii_ff         ; 38                          ;
 ;     CLR               ; 1                           ;
+;     ENA               ; 4                           ;
 ;     ENA CLR SLD       ; 5                           ;
 ;     SCLR              ; 20                          ;
-;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 106                         ;
+;     plain             ; 8                           ;
+; cycloneiii_lcell_comb ; 114                         ;
 ;     arith             ; 37                          ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 28                          ;
 ;         3 data inputs ; 8                           ;
-;     normal            ; 69                          ;
+;     normal            ; 77                          ;
 ;         0 data inputs ; 6                           ;
-;         1 data inputs ; 19                          ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 18                          ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 20                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.70                        ;
-; Average LUT depth     ; 3.78                        ;
+; Average LUT depth     ; 3.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -475,29 +478,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Oct 09 16:15:02 2021
+    Info: Processing started: Sun Oct 10 22:34:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BitLocker -c BitLocker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 3 design units, including 3 entities, in source file bitlocker.v
-    Info (12023): Found entity 1: debounce File: D:/works/FPGA/BitLocker/BitLocker.v Line: 3
+    Info (12023): Found entity 1: debouncer File: D:/works/FPGA/BitLocker/BitLocker.v Line: 3
     Info (12023): Found entity 2: LED_SEG_OUTPUT File: D:/works/FPGA/BitLocker/BitLocker.v Line: 41
     Info (12023): Found entity 3: BitLocker File: D:/works/FPGA/BitLocker/BitLocker.v Line: 67
 Info (12127): Elaborating entity "BitLocker" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at BitLocker.v(84): object "setFlag" assigned a value but never read File: D:/works/FPGA/BitLocker/BitLocker.v Line: 84
-Info (12128): Elaborating entity "LED_SEG_OUTPUT" for hierarchy "LED_SEG_OUTPUT:o1" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 129
+Info (12128): Elaborating entity "LED_SEG_OUTPUT" for hierarchy "LED_SEG_OUTPUT:o1" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 137
 Warning (10030): Net "seg.data_a" at BitLocker.v(47) has no driver or initial value, using a default initial value '0' File: D:/works/FPGA/BitLocker/BitLocker.v Line: 47
 Warning (10030): Net "seg.waddr_a" at BitLocker.v(47) has no driver or initial value, using a default initial value '0' File: D:/works/FPGA/BitLocker/BitLocker.v Line: 47
 Warning (10030): Net "seg.we_a" at BitLocker.v(47) has no driver or initial value, using a default initial value '0' File: D:/works/FPGA/BitLocker/BitLocker.v Line: 47
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:k1" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 134
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:k1" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 142
 Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "D:/works/FPGA/BitLocker/db/BitLocker.ram0_LED_SEG_OUTPUT_5c43c389.hdl.mif" -- setting initial value for remaining addresses to 0
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276013): RAM logic "LED_SEG_OUTPUT:o1|seg" is uninferred because MIF is not supported for the selected family File: D:/works/FPGA/BitLocker/BitLocker.v Line: 47
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 126
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 127
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 126
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: D:/works/FPGA/BitLocker/BitLocker.v Line: 126
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 134
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 135
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 134
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: D:/works/FPGA/BitLocker/BitLocker.v Line: 134
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -512,8 +514,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_t3c File: D:/works/FPGA/BitLocker/db/add_sub_t3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
     Info (12023): Found entity 1: add_sub_u3c File: D:/works/FPGA/BitLocker/db/add_sub_u3c.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 127
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: D:/works/FPGA/BitLocker/BitLocker.v Line: 127
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 135
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: D:/works/FPGA/BitLocker/BitLocker.v Line: 135
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -529,23 +531,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledSeg1[8]" is stuck at GND File: D:/works/FPGA/BitLocker/BitLocker.v Line: 77
     Warning (13410): Pin "ledSeg2[7]" is stuck at GND File: D:/works/FPGA/BitLocker/BitLocker.v Line: 78
     Warning (13410): Pin "ledSeg2[8]" is stuck at GND File: D:/works/FPGA/BitLocker/BitLocker.v Line: 78
-    Warning (13410): Pin "ledset" is stuck at VCC File: D:/works/FPGA/BitLocker/BitLocker.v Line: 79
     Warning (13410): Pin "ledtest" is stuck at VCC File: D:/works/FPGA/BitLocker/BitLocker.v Line: 80
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider|add_sub_4_result_int[0]~0" File: D:/works/FPGA/BitLocker/db/alt_u_div_qee.tdf Line: 47
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "keyrst[0]" File: D:/works/FPGA/BitLocker/BitLocker.v Line: 70
-Info (21057): Implemented 132 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 145 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 94 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4807 megabytes
-    Info: Processing ended: Sat Oct 09 16:15:10 2021
-    Info: Elapsed time: 00:00:08
+    Info (21061): Implemented 107 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Sun Oct 10 22:34:30 2021
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:20
 
 

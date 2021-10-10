@@ -1,0 +1,5 @@
+
+State Machine - |BitLocker|setsta
+Name setsta.1 
+setsta.0 0 
+setsta.1 1 

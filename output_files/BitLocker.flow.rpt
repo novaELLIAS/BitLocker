@@ -1,5 +1,5 @@
 Flow report for BitLocker
-Sat Oct 09 16:15:24 2021
+Sun Oct 10 22:34:43 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Oct 09 16:15:24 2021       ;
+; Flow Status                        ; Successful - Sun Oct 10 22:34:43 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; BitLocker                                   ;
 ; Top-level Entity Name              ; BitLocker                                   ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M02SCM153I7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 93 / 2,304 ( 4 % )                          ;
-;     Total combinational functions  ; 89 / 2,304 ( 4 % )                          ;
-;     Dedicated logic registers      ; 31 / 2,304 ( 1 % )                          ;
-; Total registers                    ; 31                                          ;
+; Total logic elements               ; 104 / 2,304 ( 5 % )                         ;
+;     Total combinational functions  ; 96 / 2,304 ( 4 % )                          ;
+;     Dedicated logic registers      ; 38 / 2,304 ( 2 % )                          ;
+; Total registers                    ; 38                                          ;
 ; Total pins                         ; 38 / 112 ( 34 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 110,592 ( 0 % )                         ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/09/2021 16:15:02 ;
+; Start date & time ; 10/10/2021 22:34:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BitLocker           ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 136935926717012.163376730229576        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 136935926717012.163387646257148        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -104,13 +104,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4807 MB             ; 00:00:20                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4808 MB             ; 00:00:20                           ;
 ; Fitter               ; 00:00:04     ; 1.1                     ; 5808 MB             ; 00:00:05                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4680 MB             ; 00:00:01                           ;
-; Power Analyzer       ; 00:00:01     ; 1.1                     ; 4870 MB             ; 00:00:02                           ;
+; Assembler            ; 00:00:00     ; 1.0                     ; 4680 MB             ; 00:00:01                           ;
+; Power Analyzer       ; 00:00:02     ; 1.1                     ; 4871 MB             ; 00:00:02                           ;
 ; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4821 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:31                           ;
+; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
